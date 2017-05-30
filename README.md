@@ -28,7 +28,7 @@ bleeding-edge-sample-app-refacor
 
 1、[免费的数据库-mlab](https://mlab.com/)
 ![](./img/1.png)
-![user需要填写](./img/1.png)
+![user需要填写](./img/2.png)
 
 2、[免费的服务器](https://devcenter.heroku.com/)
 ![](./img/3.png)
