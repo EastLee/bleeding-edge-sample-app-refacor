@@ -6,7 +6,7 @@ bleeding-edge-sample-app-refacor
 
 此页面本是《REACT：引领未来的用户界面开发框架》例子，不过所用技术仅仅是React+Flux，所以小生把它重构了一下！
 
-[线上页面](https://p-survey.herokuapp.com)
+线上页面：[https://p-survey.herokuapp.com](https://p-survey.herokuapp.com)
 
 ![](./img/5.png)
 ![](./img/6.png)
