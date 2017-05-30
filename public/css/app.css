@@ -1,5 +1,4 @@
 /* == BASE ================================================================= */
-
 body {
   font-size: 16px;
   color: #696d75;
@@ -356,4 +355,9 @@ a {
 
 .main-nav a.active:hover {
   border-bottom: 5px solid #4ABFE2;
+}
+
+.del{
+  color:red;
+  cursor: pointer;
 }

@@ -1,18 +1,38 @@
-/** @jsx React.DOM */
+import 'babel-polyfill'
 
-//client entry point - all components should be in separate files,
-//this will allow webpack to use hotmodule update later
-//and allow for server side to include just the app
+import React from 'react'
+import { render } from 'react-dom'
+import {fromJS} from "immutable"
 
-//Only the client side needs es5-shim so only include in bundle not app
-require('es5-shim/es5-shim');
-require('es5-shim/es5-sham');
+import { Provider } from 'react-redux'
+import { Router, browserHistory } from 'react-router'
+import { syncHistoryWithStore } from 'react-router-redux'
 
-var React = require('react/addons');
-var app_router = require('./app/app_router');
+import { configureStore, DevTools } from '../src/store/store'
+import routes from '../src/routes/routes'
+import handleData from "../src/data/handleData"
+
+const store = configureStore(browserHistory,{
+	questions:handleData(window.__initial__[0]),
+	answers:handleData(window.__initial__[1])
+});
+const history = syncHistoryWithStore(browserHistory, store)
+
+render(
+  <Provider store={store}>
+    <Router history={history} routes={routes} />
+  </Provider>,
+  document.getElementById('root')
+)
+
+console.info(__DEV__);
+if(__DEV__){
+  render(
+    <Provider store={store}>
+      <DevTools/>
+    </Provider>,
+    document.getElementById('devtools')
+  )
+}
 
 
-//allow react dev tools work
-window.React = React;
-
-React.renderComponent(app_router, document.body);
